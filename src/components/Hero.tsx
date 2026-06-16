@@ -55,7 +55,7 @@ export default function Hero() {
 
       {/* Content — fades and moves up as user scrolls down */}
       <motion.div
-        className="relative z-10 px-6 md:px-13 pt-20 max-w-[640px]"
+        className="relative z-10 mx-4 md:mx-0 mt-20 md:mt-0 px-6 py-8 md:py-0 md:px-13 md:pt-20 max-w-[640px] rounded-2xl md:rounded-none bg-[#050F1B]/60 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border border-white/10 md:border-transparent shadow-2xl md:shadow-none"
         style={{ opacity: contentOpacity, y: contentY }}
       >
         {/* Eyebrow */}
@@ -63,7 +63,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex items-center gap-[12px] mb-6"
+          className="flex flex-wrap items-center gap-x-[12px] gap-y-[8px] mb-6"
         >
           <span className="text-[10.5px] md:text-[11.5px] font-bold tracking-[0.30em] uppercase" style={{ color: "#D4943A" }}>
             Civil Engineering
@@ -85,8 +85,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.5 }}
           className="font-heading text-[clamp(40px,5.2vw,76px)] font-extrabold text-white leading-[1.05] tracking-[-0.01em] mb-5"
         >
-          <span className="block whitespace-nowrap">We Construct.</span>
-          <span className="block whitespace-nowrap">We Outsource.</span>
+          <span className="block">We Construct.</span>
+          <span className="block">We Outsource.</span>
         </motion.h1>
 
         {/* Subline */}
