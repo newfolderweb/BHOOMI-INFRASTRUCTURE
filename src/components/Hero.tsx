@@ -63,17 +63,17 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-wrap items-center gap-x-[12px] gap-y-[8px] mb-6"
+          className="flex flex-wrap items-center gap-x-[10px] gap-y-[8px] mb-6"
         >
-          <span className="text-[10.5px] md:text-[11.5px] font-bold tracking-[0.30em] uppercase" style={{ color: "#D4943A" }}>
+          <span className="text-[10px] md:text-[11px] font-bold tracking-[0.25em] uppercase px-3 py-[5px] rounded-full backdrop-blur-[12px] border border-white/10" style={{ color: "#D4943A", background: "rgba(255,255,255,0.06)" }}>
             Civil Engineering
           </span>
           <div className="w-[5px] h-[5px] rounded-full" style={{ background: "#FFFFFF" }} />
-          <span className="text-[10.5px] md:text-[11.5px] font-bold tracking-[0.30em] uppercase" style={{ color: "#D4943A" }}>
+          <span className="text-[10px] md:text-[11px] font-bold tracking-[0.25em] uppercase px-3 py-[5px] rounded-full backdrop-blur-[12px] border border-white/10" style={{ color: "#D4943A", background: "rgba(255,255,255,0.06)" }}>
             Construction
           </span>
           <div className="w-[5px] h-[5px] rounded-full" style={{ background: "#FFFFFF" }} />
-          <span className="text-[10.5px] md:text-[11.5px] font-bold tracking-[0.30em] uppercase" style={{ color: "#D4943A" }}>
+          <span className="text-[10px] md:text-[11px] font-bold tracking-[0.25em] uppercase px-3 py-[5px] rounded-full backdrop-blur-[12px] border border-white/10" style={{ color: "#D4943A", background: "rgba(255,255,255,0.06)" }}>
             Outsourcing
           </span>
         </motion.div>
@@ -83,10 +83,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5 }}
-          className="font-heading text-[clamp(40px,5.2vw,76px)] font-extrabold text-white leading-[1.05] tracking-[-0.01em] mb-5"
+          className="font-heading text-[clamp(32px,4.5vw,68px)] font-extrabold text-white leading-[1.05] tracking-[-0.01em] mb-5 whitespace-nowrap"
         >
-          <span className="block">We Construct</span>
-          <span className="block">Dreams!</span>
+          <span className="block mb-2">We Construct.</span>
+          <span className="block">We Outsource.</span>
         </motion.h1>
 
         {/* Subline */}
@@ -96,9 +96,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="text-[13.5px] md:text-[15px] font-normal text-muted leading-[1.7] max-w-[430px] mb-9"
         >
-          End-to-end infrastructure and construction solutions with
+          We construct dreams — with end-to-end infrastructure solutions,
           <br className="hidden md:block" />
-          innovative, sustainable and economical engineering — transfer your burden to us.
+          innovative & sustainable engineering. Transfer your burden to us.
         </motion.p>
 
         {/* CTA Buttons */}
