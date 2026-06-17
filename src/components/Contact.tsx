@@ -83,8 +83,11 @@ export default function Contact() {
           {contactGrid.flat().map((item, i) => {
             const inner = (
               <>
+                {/* Gold top accent line */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-t-[20px]" />
+
                 {/* Icon */}
-                <div className="w-11 h-11 rounded-lg bg-gold/10 flex items-center justify-center text-gold shrink-0 group-hover:bg-gold group-hover:text-white transition-all duration-300">
+                <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center text-gold shrink-0 group-hover:bg-gold group-hover:text-white transition-all duration-300">
                   {item.icon}
                 </div>
 
@@ -110,7 +113,8 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 viewport={{ once: true }}
-                className="group flex items-start gap-5 bg-white/[0.04] border border-white/[0.08] hover:border-gold/30 p-6 md:p-7 transition-all duration-400 no-underline hover:bg-white/[0.07]"
+                className="group relative overflow-hidden flex items-start gap-5 bg-white/[0.06] backdrop-blur-xl border border-white/[0.12] hover:border-gold/40 rounded-[20px] p-6 md:p-7 transition-all duration-400 no-underline hover:bg-white/[0.10] shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
+                style={{ borderRadius: '20px' }}
               >
                 {inner}
               </motion.a>
@@ -121,7 +125,8 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 viewport={{ once: true }}
-                className="group flex items-start gap-5 bg-white/[0.04] border border-white/[0.08] hover:border-gold/30 p-6 md:p-7 transition-all duration-400 hover:bg-white/[0.07]"
+                className="group relative overflow-hidden flex items-start gap-5 bg-white/[0.06] backdrop-blur-xl border border-white/[0.12] hover:border-gold/40 rounded-[20px] p-6 md:p-7 transition-all duration-400 hover:bg-white/[0.10] shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
+                style={{ borderRadius: '20px' }}
               >
                 {inner}
               </motion.div>
@@ -142,13 +147,15 @@ export default function Contact() {
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2.5 bg-gold hover:bg-gold-dark text-white px-8 py-3.5 text-[11px] font-semibold tracking-[0.14em] uppercase no-underline transition-all duration-300"
+            style={{ borderRadius: '14px' }}
           >
             <MessageCircle size={16} />
             WhatsApp Us
           </a>
           <a
             href="mailto:bhoomiinfrastructures@gmail.com"
-            className="flex items-center gap-2.5 border border-white/20 hover:border-gold/50 text-white px-8 py-3.5 text-[11px] font-semibold tracking-[0.14em] uppercase no-underline transition-all duration-300"
+            className="flex items-center gap-2.5 border border-white/20 hover:border-gold/50 text-white backdrop-blur-xl bg-white/[0.06] px-8 py-3.5 text-[11px] font-semibold tracking-[0.14em] uppercase no-underline transition-all duration-300 shadow-[0_4px_30px_rgba(0,0,0,0.2)]"
+            style={{ borderRadius: '14px' }}
           >
             <Mail size={16} />
             Send an Email
