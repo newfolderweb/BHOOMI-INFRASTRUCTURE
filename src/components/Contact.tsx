@@ -93,14 +93,14 @@ export default function Contact() {
                   <p className="text-[10px] font-bold tracking-[0.18em] text-gold uppercase mb-1.5">
                     {item.label}
                   </p>
-                  <p className={`text-[14px] md:text-[15px] text-white/90 leading-[1.6] group-hover:text-white transition-colors ${item.isGstin ? "font-mono tracking-wider" : ""}`}>
+                  <p className={`text-[14px] md:text-[15px] text-white/90 leading-[1.6] group-hover:text-white transition-colors ${"isGstin" in item && item.isGstin ? "font-mono tracking-wider" : ""}`}>
                     {item.value}
                   </p>
                 </div>
               </>
             );
 
-            return item.href ? (
+            return "href" in item && item.href ? (
               <motion.a
                 key={item.label}
                 href={item.href}
