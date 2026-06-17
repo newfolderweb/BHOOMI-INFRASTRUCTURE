@@ -95,8 +95,9 @@ export default function OutsourcingServices() {
             Transfer Your Burden to Us
           </h2>
           <p className="text-[14px] md:text-[15px] text-muted leading-[1.8] max-w-[520px] mx-auto">
-            Expert manpower, dedicated operations and seamless facility management —
-            so you can focus on what matters most.
+            Comprehensive manpower outsourcing, housekeeping, sanitation, facility
+            management and support staffing — serving government departments,
+            PSUs, defence establishments and private enterprises across India.
           </p>
         </motion.div>
 

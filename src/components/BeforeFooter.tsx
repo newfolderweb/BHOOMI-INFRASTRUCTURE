@@ -25,8 +25,8 @@ export default function BeforeFooter() {
             Ready to Work<br />With Us?
           </h2>
           <p className="text-[14px] text-muted leading-[1.8] mb-8 max-w-[340px]">
-            From groundbreaking to handover — partner with a team that delivers
-            with military precision and engineering excellence.
+            From groundbreaking to handover — accuracy, efficiency, and
+            innovation in every project we deliver.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <a

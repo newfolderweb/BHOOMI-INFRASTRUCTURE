@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const features = [
   {
     title: "Infrastructure\nConstruction",
-    subtitle: "Civil | Industrial | Institutional",
+    subtitle: "We Construct Dreams!",
     icon: (
       <svg className="w-[38px] h-[38px] text-gold" viewBox="0 0 38 38" fill="none">
         <rect x="3" y="16" width="32" height="20" rx="1" stroke="currentColor" strokeWidth="1.8"/>
@@ -19,7 +19,7 @@ const features = [
   },
   {
     title: "Outsourcing\nExcellence",
-    subtitle: "Skilled Teams | Managed Delivery",
+    subtitle: "Transfer Your Burden to Us.",
     icon: (
       <svg className="w-[38px] h-[38px] text-gold" viewBox="0 0 38 38" fill="none">
         <circle cx="19" cy="19" r="7" stroke="currentColor" strokeWidth="1.8"/>

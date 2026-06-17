@@ -107,8 +107,9 @@ export default function ConstructionServices() {
             Building India&apos;s Future
           </h2>
           <p className="text-[14px] md:text-[15px] text-mid-grey leading-[1.8] max-w-[540px] mx-auto">
-            From civil engineering to turnkey project management — precision-driven
-            construction solutions delivered with military discipline.
+            Delivering innovative, sustainable and economical engineering solutions
+            — from civil engineering to turnkey project management, driven by
+            technology and customer satisfaction.
           </p>
         </motion.div>
 

@@ -148,9 +148,16 @@ export default function Footer() {
               </div>
               <span className="hidden md:block w-[1px] h-8 bg-white/[0.08] mx-3" />
               <p className="hidden md:block text-[13px] text-white/35 leading-[1.7] max-w-[320px]">
-                End-to-end infrastructure construction and skilled outsourcing —
-                built on discipline, backed by engineering excellence.
+                We Construct Dreams! — End-to-end infrastructure construction
+                and skilled outsourcing. Transfer your burden to us.
               </p>
+              <Image
+                src="/images/logo-secondary.jpeg"
+                alt="Bhoomi Infrastructure - Secondary Logo"
+                width={56}
+                height={56}
+                className="hidden md:block w-14 h-14 object-contain rounded-full shrink-0"
+              />
             </div>
 
             {/* CTA */}
@@ -239,37 +246,67 @@ export default function Footer() {
               </ul>
             </motion.div>
 
-            {/* ── Head Office ── */}
+            {/* ── Offices ── */}
             <motion.div variants={itemVariants}>
               <h4 className="text-[10px] font-bold tracking-[0.24em] text-gold/80 uppercase mb-7 flex items-center gap-3">
                 <span className="w-4 h-[1px] bg-gold/30" />
-                Head Office
+                Our Offices
               </h4>
 
-              <div className="group bg-white/[0.025] border border-white/[0.06] hover:border-gold/15 rounded-sm p-5 transition-all duration-400">
-                <div className="flex items-start gap-4">
-                  <div className="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.06] group-hover:border-gold/20 flex items-center justify-center shrink-0 transition-colors duration-300">
-                    <MapPin size={14} className="text-gold/60 group-hover:text-gold transition-colors duration-300" />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <p className="text-[13px] font-semibold text-white/80">
-                        Lucknow
-                      </p>
-                      <span className="text-[8px] font-bold tracking-[0.14em] text-gold/50 bg-gold/[0.07] px-2 py-0.5 uppercase rounded-sm">
-                        HQ
-                      </span>
+              <div className="space-y-4">
+                {/* Corporate Office — Lucknow */}
+                <div className="group bg-white/[0.025] border border-white/[0.06] hover:border-gold/15 rounded-sm p-5 transition-all duration-400">
+                  <div className="flex items-start gap-4">
+                    <div className="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.06] group-hover:border-gold/20 flex items-center justify-center shrink-0 transition-colors duration-300">
+                      <MapPin size={14} className="text-gold/60 group-hover:text-gold transition-colors duration-300" />
                     </div>
-                    <p className="text-[12px] text-white/38 leading-[1.7] mb-3">
-                      07, Nandini Vihar, Sector-12,
-                      <br />
-                      Indira Nagar, Lucknow — 226016
-                      <br />
-                      Uttar Pradesh
-                    </p>
-                    <p className="text-[9.5px] text-gold/35 font-mono tracking-[0.06em]">
-                      GSTIN: 09AALCB6498R1Z3
-                    </p>
+                    <div>
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <p className="text-[13px] font-semibold text-white/80">
+                          Lucknow
+                        </p>
+                        <span className="text-[8px] font-bold tracking-[0.14em] text-gold/50 bg-gold/[0.07] px-2 py-0.5 uppercase rounded-sm">
+                          Corporate Office
+                        </span>
+                      </div>
+                      <p className="text-[12px] text-white/38 leading-[1.7] mb-3">
+                        07, Nandini Vihar, Sector-12,
+                        <br />
+                        Indira Nagar, Lucknow — 226016
+                        <br />
+                        Uttar Pradesh
+                      </p>
+                      <p className="text-[9.5px] text-gold/35 font-mono tracking-[0.06em]">
+                        GSTIN: 09AASFB7214R1ZM
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Registered Office — Dhanbad, Jharkhand */}
+                <div className="group bg-white/[0.025] border border-white/[0.06] hover:border-gold/15 rounded-sm p-5 transition-all duration-400">
+                  <div className="flex items-start gap-4">
+                    <div className="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.06] group-hover:border-gold/20 flex items-center justify-center shrink-0 transition-colors duration-300">
+                      <MapPin size={14} className="text-gold/60 group-hover:text-gold transition-colors duration-300" />
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <p className="text-[13px] font-semibold text-white/80">
+                          Dhanbad
+                        </p>
+                        <span className="text-[8px] font-bold tracking-[0.14em] text-gold/50 bg-gold/[0.07] px-2 py-0.5 uppercase rounded-sm">
+                          Regd. Office
+                        </span>
+                      </div>
+                      <p className="text-[12px] text-white/38 leading-[1.7] mb-3">
+                        New Bishnupur, Dhanbad
+                        <br />
+                        Jharkhand — 828130
+                      </p>
+                      <p className="text-[9.5px] text-gold/35 font-mono tracking-[0.06em]">
+                        GSTIN: 20AASFB7214R1Z2
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

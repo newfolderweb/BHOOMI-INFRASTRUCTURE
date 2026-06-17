@@ -91,14 +91,19 @@ export default function AboutTeam() {
             About Us
           </span>
           <h2 className="font-heading text-[clamp(28px,4vw,42px)] font-extrabold text-navy leading-[1.1] mb-6">
-            Built on Discipline.<br />Backed by Engineering.
+            We Construct Dreams!
           </h2>
           <p className="text-[14px] md:text-[15px] text-mid-grey leading-[1.85] max-w-[620px] mx-auto mb-4">
-            Bhoomi Infrastructure Pvt. Ltd. was founded by an ex-Indian Air Force
-            professional who brought military-grade discipline to the construction
-            and outsourcing industry. What began as a vision to deliver infrastructure
-            with integrity has grown into a multi-crore enterprise serving
-            government, defence, and corporate clients across India.
+            We are a technology-driven Infrastructure & Construction Services
+            provider, delivering end-to-end Civil Engineering, Industrial
+            Construction, and Government Infrastructure Projects. Our capabilities
+            cover Residential, Commercial, Industrial & Institutional developments
+            across Uttar Pradesh and Jharkhand.
+          </p>
+          <p className="text-[14px] md:text-[15px] text-mid-grey leading-[1.85] max-w-[620px] mx-auto mb-4">
+            Our Mission is to build a future where every infrastructure project
+            embodies accuracy, efficiency, and innovation, and every construction
+            endeavour stands as smart, safe, and exemplary in quality.
           </p>
           <p className="text-[14px] md:text-[15px] text-mid-grey leading-[1.85] max-w-[620px] mx-auto">
             With 10+ completed projects, 18+ trusted clients, and a portfolio

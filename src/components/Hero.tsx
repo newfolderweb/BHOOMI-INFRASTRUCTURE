@@ -85,8 +85,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.5 }}
           className="font-heading text-[clamp(40px,5.2vw,76px)] font-extrabold text-white leading-[1.05] tracking-[-0.01em] mb-5"
         >
-          <span className="block">We Construct.</span>
-          <span className="block">We Outsource.</span>
+          <span className="block">We Construct</span>
+          <span className="block">Dreams!</span>
         </motion.h1>
 
         {/* Subline */}
@@ -96,9 +96,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="text-[13.5px] md:text-[15px] font-normal text-muted leading-[1.7] max-w-[430px] mb-9"
         >
-          End-to-end infrastructure and construction solutions
+          End-to-end infrastructure and construction solutions with
           <br className="hidden md:block" />
-          with skilled outsourcing that builds better, faster and smarter.
+          innovative, sustainable and economical engineering — transfer your burden to us.
         </motion.p>
 
         {/* CTA Buttons */}

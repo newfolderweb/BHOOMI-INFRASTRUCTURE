@@ -8,7 +8,7 @@ const services = [
     icon: <Building2 size={32} strokeWidth={1.5} />,
     title: "Construction & Infrastructure",
     description:
-      "End-to-end civil engineering, industrial construction, and government infrastructure projects — delivered on time with military precision.",
+      "Technology-driven infrastructure & construction — delivering end-to-end civil engineering, industrial construction and government projects with innovative, sustainable solutions.",
     href: "#construction-services",
     tags: ["Civil Engineering", "Industrial", "Government"],
   },
@@ -16,9 +16,9 @@ const services = [
     icon: <Users size={32} strokeWidth={1.5} />,
     title: "Outsourcing Services",
     description:
-      "Skilled manpower, housekeeping, facility management, and support staffing — transferring your operational burden to expert hands.",
+      "Comprehensive manpower outsourcing, housekeeping, sanitation, facility management and support staffing — transfer your burden to expert hands.",
     href: "#outsourcing-services",
-    tags: ["Manpower", "Housekeeping", "Facility Mgmt"],
+    tags: ["Manpower", "Housekeeping", "Sanitation", "Facility Mgmt"],
   },
 ];
 

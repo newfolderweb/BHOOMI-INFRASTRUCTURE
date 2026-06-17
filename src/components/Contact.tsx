@@ -3,36 +3,52 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, FileText, MessageCircle } from "lucide-react";
 
-const contactDetails = [
-  {
-    icon: <Phone size={20} strokeWidth={1.5} />,
-    label: "Phone",
-    value: "0522-3524986",
-    href: "tel:05223524986",
-  },
-  {
-    icon: <MessageCircle size={20} strokeWidth={1.5} />,
-    label: "WhatsApp",
-    value: "+91 73900 90241",
-    href: "https://wa.me/917390090241",
-  },
-  {
-    icon: <Mail size={20} strokeWidth={1.5} />,
-    label: "Email",
-    value: "bhoomiinfrastructures@gmail.com",
-    href: "mailto:bhoomiinfrastructures@gmail.com",
-  },
-  {
-    icon: <MapPin size={20} strokeWidth={1.5} />,
-    label: "Head Office",
-    value: "07, Nandini Vihar, Sector-12, Indira Nagar, Lucknow — 226016",
-    href: "https://maps.google.com/?q=Nandini+Vihar+Sector+12+Indira+Nagar+Lucknow",
-  },
-];
-
-const gstinInfo = [
-  { state: "Uttar Pradesh", gstin: "09AALCB6498R1Z3" },
-
+// Row 1: Phone, WhatsApp
+// Row 2: Email, Address
+// Row 3: GSTIN UP, GSTIN JH
+const contactGrid = [
+  [
+    {
+      icon: <Phone size={20} strokeWidth={1.5} />,
+      label: "Phone",
+      value: "0522-3524986",
+      href: "tel:05223524986",
+    },
+    {
+      icon: <MessageCircle size={20} strokeWidth={1.5} />,
+      label: "WhatsApp",
+      value: "+91 73900 90241",
+      href: "https://wa.me/917390090241",
+    },
+  ],
+  [
+    {
+      icon: <Mail size={20} strokeWidth={1.5} />,
+      label: "Email",
+      value: "bhoomiinfrastructures@gmail.com",
+      href: "mailto:bhoomiinfrastructures@gmail.com",
+    },
+    {
+      icon: <MapPin size={20} strokeWidth={1.5} />,
+      label: "Address",
+      value: "07, Nandini Vihar, Sector-12, Indira Nagar, Lucknow — 226016, UP",
+      href: "https://maps.google.com/?q=Nandini+Vihar+Sector+12+Indira+Nagar+Lucknow",
+    },
+  ],
+  [
+    {
+      icon: <FileText size={20} strokeWidth={1.5} />,
+      label: "GSTIN — Uttar Pradesh",
+      value: "09AASFB7214R1ZM",
+      isGstin: true,
+    },
+    {
+      icon: <FileText size={20} strokeWidth={1.5} />,
+      label: "GSTIN — Jharkhand",
+      value: "20AASFB7214R1Z2",
+      isGstin: true,
+    },
+  ],
 ];
 
 export default function Contact() {
@@ -62,63 +78,56 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        {/* Contact Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mb-12">
-          {contactDetails.map((item, i) => (
-            <motion.a
-              key={item.label}
-              href={item.href}
-              target={item.href.startsWith("http") ? "_blank" : undefined}
-              rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              viewport={{ once: true }}
-              className="group flex items-start gap-5 bg-white/[0.04] border border-white/[0.08] hover:border-gold/30 p-6 md:p-7 transition-all duration-400 no-underline hover:bg-white/[0.07]"
-            >
-              {/* Icon */}
-              <div className="w-11 h-11 rounded-lg bg-gold/10 flex items-center justify-center text-gold shrink-0 group-hover:bg-gold group-hover:text-white transition-all duration-300">
-                {item.icon}
-              </div>
+        {/* Contact Grid — 2-column aligned layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mb-12 max-w-[800px] mx-auto">
+          {contactGrid.flat().map((item, i) => {
+            const inner = (
+              <>
+                {/* Icon */}
+                <div className="w-11 h-11 rounded-lg bg-gold/10 flex items-center justify-center text-gold shrink-0 group-hover:bg-gold group-hover:text-white transition-all duration-300">
+                  {item.icon}
+                </div>
 
-              {/* Text */}
-              <div>
-                <p className="text-[10px] font-bold tracking-[0.18em] text-gold uppercase mb-1.5">
-                  {item.label}
-                </p>
-                <p className="text-[14px] md:text-[15px] text-white/90 leading-[1.6] group-hover:text-white transition-colors">
-                  {item.value}
-                </p>
-              </div>
-            </motion.a>
-          ))}
+                {/* Text */}
+                <div className="min-w-0">
+                  <p className="text-[10px] font-bold tracking-[0.18em] text-gold uppercase mb-1.5">
+                    {item.label}
+                  </p>
+                  <p className={`text-[14px] md:text-[15px] text-white/90 leading-[1.6] group-hover:text-white transition-colors ${item.isGstin ? "font-mono tracking-wider" : ""}`}>
+                    {item.value}
+                  </p>
+                </div>
+              </>
+            );
+
+            return item.href ? (
+              <motion.a
+                key={item.label}
+                href={item.href}
+                target={item.href.startsWith("http") ? "_blank" : undefined}
+                rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                viewport={{ once: true }}
+                className="group flex items-start gap-5 bg-white/[0.04] border border-white/[0.08] hover:border-gold/30 p-6 md:p-7 transition-all duration-400 no-underline hover:bg-white/[0.07]"
+              >
+                {inner}
+              </motion.a>
+            ) : (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                viewport={{ once: true }}
+                className="group flex items-start gap-5 bg-white/[0.04] border border-white/[0.08] hover:border-gold/30 p-6 md:p-7 transition-all duration-400 hover:bg-white/[0.07]"
+              >
+                {inner}
+              </motion.div>
+            );
+          })}
         </div>
-
-        {/* GSTIN Cards */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="flex justify-center [&>div]:w-full [&>div]:max-w-[530px]"
-        >
-          {gstinInfo.map((gst) => (
-            <div
-              key={gst.gstin}
-              className="flex flex-col items-center gap-3 bg-white/[0.03] border border-white/[0.06] px-6 py-5 text-center"
-            >
-              <FileText size={16} className="text-gold/60" />
-              <div>
-                <p className="text-[10px] font-bold tracking-[0.16em] text-gold/70 uppercase mb-1">
-                  GSTIN — {gst.state}
-                </p>
-                <p className="text-[13px] text-white/70 font-mono tracking-wider">
-                  {gst.gstin}
-                </p>
-              </div>
-            </div>
-          ))}
-        </motion.div>
 
         {/* CTA Buttons */}
         <motion.div

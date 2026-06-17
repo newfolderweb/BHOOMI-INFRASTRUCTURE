@@ -147,6 +147,13 @@ export default function Navbar() {
               INFRASTRUCTURE
             </span>
           </div>
+          <Image
+            src="/images/logo-secondary.jpeg"
+            alt="Bhoomi Infrastructure - Secondary Logo"
+            width={48}
+            height={48}
+            className="w-10 h-10 md:w-12 md:h-12 object-contain rounded-full"
+          />
         </a>
 
         {/* Desktop Nav */}
