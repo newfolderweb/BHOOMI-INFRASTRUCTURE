@@ -327,10 +327,6 @@ export default function Footer() {
                 <p className="text-[11px] text-white/30 tracking-wide">
                   © {currentYear} Bhoomi Infrastructure Pvt. Ltd.
                 </p>
-                <span className="hidden sm:block w-[3px] h-[3px] rounded-full bg-white/12" />
-                <p className="text-[9.5px] text-white/20 tracking-[0.08em] uppercase font-mono">
-                  CIN: U45200UP2020PTC143254
-                </p>
               </div>
 
               {/* Right — Back to top */}
