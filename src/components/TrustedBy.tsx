@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRef, useState, useCallback, useEffect } from "react";
 
 const clients = [
   {
@@ -96,6 +97,119 @@ function LogoItem({ client }: { client: (typeof clients)[0] }) {
   return null;
 }
 
+function MobileSlider() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const isDragging = useRef(false);
+  const isTouching = useRef(false);
+  const startX = useRef(0);
+  const scrollStart = useRef(0);
+  const [dragged, setDragged] = useState(false);
+  const animRef = useRef<number>(0);
+  const resumeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const SPEED_PX_PER_FRAME = useRef(1);
+
+  const autoScroll = useCallback(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    if (!isDragging.current && !isTouching.current) {
+      track.scrollLeft += SPEED_PX_PER_FRAME.current;
+      const halfWidth = track.scrollWidth / 2;
+      if (track.scrollLeft >= halfWidth) {
+        track.scrollLeft -= halfWidth;
+      }
+    }
+    animRef.current = requestAnimationFrame(autoScroll);
+  }, []);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const raf = requestAnimationFrame(() => {
+      SPEED_PX_PER_FRAME.current = 1;
+      animRef.current = requestAnimationFrame(autoScroll);
+    });
+    return () => {
+      cancelAnimationFrame(raf);
+      cancelAnimationFrame(animRef.current);
+      if (resumeTimer.current) clearTimeout(resumeTimer.current);
+    };
+  }, [autoScroll]);
+
+  const pauseAutoScroll = useCallback(() => {
+    isTouching.current = true;
+    if (resumeTimer.current) clearTimeout(resumeTimer.current);
+  }, []);
+
+  const resumeAutoScroll = useCallback(() => {
+    resumeTimer.current = setTimeout(() => {
+      isTouching.current = false;
+    }, 1200);
+  }, []);
+
+  const onPointerDown = useCallback((e: React.PointerEvent) => {
+    isDragging.current = true;
+    pauseAutoScroll();
+    startX.current = e.clientX;
+    scrollStart.current = trackRef.current?.scrollLeft ?? 0;
+    trackRef.current?.setPointerCapture(e.pointerId);
+    setDragged(false);
+  }, [pauseAutoScroll]);
+
+  const onPointerMove = useCallback((e: React.PointerEvent) => {
+    if (!isDragging.current || !trackRef.current) return;
+    const dx = startX.current - e.clientX;
+    if (Math.abs(dx) > 4) setDragged(true);
+    trackRef.current.scrollLeft = scrollStart.current + dx;
+  }, []);
+
+  const onPointerUp = useCallback(() => {
+    isDragging.current = false;
+    resumeAutoScroll();
+  }, [resumeAutoScroll]);
+
+  const loopedClients = [...clients, ...clients];
+
+  return (
+    <div className="relative">
+      {/* Left fade */}
+      <div className="absolute left-0 top-0 bottom-0 w-[32px] bg-gradient-to-r from-off-white to-transparent z-10 pointer-events-none" />
+      {/* Right fade */}
+      <div className="absolute right-0 top-0 bottom-0 w-[32px] bg-gradient-to-l from-off-white to-transparent z-10 pointer-events-none" />
+
+      <div
+        ref={trackRef}
+        className="flex overflow-x-auto gap-4 px-8 pb-2"
+        style={{
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+          cursor: isDragging.current ? "grabbing" : "grab",
+          userSelect: "none",
+          WebkitOverflowScrolling: "touch",
+        }}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerLeave={onPointerUp}
+      >
+        {loopedClients.map((client, i) => (
+          <div
+            key={`${client.logo}-${i}`}
+            style={{ pointerEvents: dragged ? "none" : undefined }}
+          >
+            <LogoItem client={client} />
+          </div>
+        ))}
+      </div>
+
+      {/* Swipe hint */}
+      <p className="text-center text-[9px] text-mid-grey/50 tracking-[0.1em] uppercase mt-3">
+        ← swipe to explore →
+      </p>
+    </div>
+  );
+}
+
 export default function TrustedBy() {
   // Double the list for seamless marquee loop
   const doubled = [...clients, ...clients, ...clients, ...clients];
@@ -117,8 +231,8 @@ export default function TrustedBy() {
         <div className="h-[1px] w-[60px] bg-gold" />
       </motion.div>
 
-      {/* Marquee */}
-      <div className="relative">
+      {/* Desktop: Marquee */}
+      <div className="hidden md:block relative">
         {/* Left fade */}
         <div className="absolute left-0 top-0 bottom-0 w-[60px] bg-gradient-to-r from-off-white to-transparent z-10 pointer-events-none" />
         {/* Right fade */}
@@ -129,6 +243,11 @@ export default function TrustedBy() {
             <LogoItem key={`${client.logo}-${i}`} client={client} />
           ))}
         </div>
+      </div>
+
+      {/* Mobile: Draggable slider */}
+      <div className="md:hidden">
+        <MobileSlider />
       </div>
     </section>
   );

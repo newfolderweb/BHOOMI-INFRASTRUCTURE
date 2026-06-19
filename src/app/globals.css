@@ -85,6 +85,11 @@ body {
   opacity: 1;
 }
 
+/* ── Mobile slider — hide scrollbar ── */
+.mobile-slider-track::-webkit-scrollbar {
+  display: none;
+}
+
 /* ── Marquee animation ── */
 @keyframes marquee {
   0% { transform: translateX(0); }
@@ -98,7 +103,7 @@ body {
 }
 @media (max-width: 768px) {
   .animate-marquee {
-    animation-duration: 14s;
+    animation-duration: 10s;
   }
 }
 
