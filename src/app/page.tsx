@@ -13,10 +13,12 @@ import Contact from "@/components/Contact";
 import BeforeFooter from "@/components/BeforeFooter";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+import WelcomePopup from "@/components/WelcomePopup";
 
 export default function Home() {
   return (
     <main className="flex-1">
+      <WelcomePopup />
       <Navbar />
       <BackToTop />
       <div className="h-screen flex flex-col">

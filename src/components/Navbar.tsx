@@ -28,6 +28,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [logoPopup, setLogoPopup] = useState(false);
 
   // Scroll progress bar
   const { scrollYProgress } = useScroll();
@@ -110,8 +111,8 @@ export default function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={`fixed top-[3px] left-3 right-3 md:left-6 md:right-6 z-50 flex items-center justify-between px-6 md:px-10 py-4 md:py-5 rounded-2xl transition-all duration-500 overflow-hidden ${scrolled
-            ? "bg-navy/95 backdrop-blur-md shadow-lg"
-            : "bg-white/[0.06] backdrop-blur-[12px] border border-white/10"
+          ? "bg-navy/95 backdrop-blur-md shadow-lg"
+          : "bg-white/[0.06] backdrop-blur-[12px] border border-white/10"
           }`}
       >
         {/* Subtle flowing light bar */}
@@ -136,8 +137,9 @@ export default function Navbar() {
             alt="Bhoomi Infrastructure"
             width={48}
             height={48}
-            className="w-10 h-10 md:w-12 md:h-12 object-contain"
+            className="w-10 h-10 md:w-12 md:h-12 object-contain cursor-pointer"
             priority
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); setLogoPopup(true); }}
           />
           <div className="flex flex-col">
             <span className="font-heading text-[18px] md:text-[22px] font-bold text-white tracking-[0.06em] leading-none">
@@ -148,11 +150,12 @@ export default function Navbar() {
             </span>
           </div>
           <Image
-            src="/images/logo-secondary.jpeg"
+            src="/images/logo-blue.jpeg"
             alt="Bhoomi Infrastructure - Secondary Logo"
-            width={48}
-            height={48}
-            className="w-10 h-10 md:w-12 md:h-12 object-contain rounded-full"
+            width={56}
+            height={56}
+            className="w-12 h-12 md:w-14 md:h-14 object-contain rounded-full cursor-pointer"
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); setLogoPopup(true); }}
           />
         </a>
 
@@ -163,8 +166,8 @@ export default function Navbar() {
               <a
                 href={link.href}
                 className={`text-[11px] xl:text-[12px] font-medium tracking-[0.1em] no-underline uppercase transition-colors duration-200 pb-1 relative ${isActive(link.href)
-                    ? "text-gold"
-                    : "text-white/85 hover:text-white"
+                  ? "text-gold"
+                  : "text-white/85 hover:text-white"
                   }`}
               >
                 {link.label}
@@ -241,6 +244,114 @@ export default function Navbar() {
                 </a>
               </motion.li>
             </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Logo Lightbox Popup */}
+      <AnimatePresence>
+        {logoPopup && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[9999] flex items-center justify-center cursor-pointer"
+            style={{
+              background: "radial-gradient(ellipse at center, rgba(5,15,27,0.92) 0%, rgba(0,0,0,0.96) 100%)",
+              backdropFilter: "blur(16px)",
+              WebkitBackdropFilter: "blur(16px)",
+            }}
+            onClick={() => setLogoPopup(false)}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setLogoPopup(false)}
+              className="absolute top-6 right-6 w-10 h-10 rounded-full flex items-center justify-center text-white/70 hover:text-white transition-colors duration-200"
+              style={{
+                background: "rgba(255,255,255,0.08)",
+                border: "1px solid rgba(255,255,255,0.15)",
+              }}
+              aria-label="Close logo popup"
+            >
+              <X size={20} />
+            </button>
+
+            {/* Logos */}
+            <motion.div
+              initial={{ scale: 0.85, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="flex flex-col md:flex-row items-center gap-10 md:gap-16 cursor-default"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Brown / Construction logo */}
+              <div className="flex flex-col items-center gap-4">
+                <div
+                  className="rounded-2xl overflow-hidden"
+                  style={{
+                    background: "#fff",
+                    padding: "24px",
+                    boxShadow: "0 20px 60px rgba(136,83,44,0.2), 0 0 0 1px rgba(255,255,255,0.06)",
+                  }}
+                >
+                  <Image
+                    src="/images/logo-transparent.png"
+                    alt="Bhoomi Infrastructure - Construction"
+                    width={220}
+                    height={220}
+                    className="object-contain"
+                  />
+                </div>
+                <span
+                  className="text-[11px] font-semibold tracking-[0.2em] uppercase"
+                  style={{ color: "#B8773E" }}
+                >
+                  We Construct
+                </span>
+              </div>
+
+              {/* Divider */}
+              <div
+                className="hidden md:block w-[1px] h-40"
+                style={{
+                  background: "linear-gradient(to bottom, transparent, rgba(255,255,255,0.15), transparent)",
+                }}
+              />
+              <div
+                className="block md:hidden h-[1px] w-40"
+                style={{
+                  background: "linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent)",
+                }}
+              />
+
+              {/* Blue / Outsourcing logo */}
+              <div className="flex flex-col items-center gap-4">
+                <div
+                  className="rounded-2xl overflow-hidden"
+                  style={{
+                    background: "#fff",
+                    padding: "24px",
+                    boxShadow: "0 20px 60px rgba(59,130,246,0.15), 0 0 0 1px rgba(255,255,255,0.06)",
+                  }}
+                >
+                  <Image
+                    src="/images/logo-blue.jpeg"
+                    alt="Bhoomi Infrastructure - Outsourcing"
+                    width={220}
+                    height={220}
+                    className="object-contain"
+                  />
+                </div>
+                <span
+                  className="text-[11px] font-semibold tracking-[0.2em] uppercase"
+                  style={{ color: "#3B82F6" }}
+                >
+                  We Outsource
+                </span>
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

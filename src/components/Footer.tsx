@@ -152,7 +152,7 @@ export default function Footer() {
                 and skilled outsourcing. Transfer your burden to us.
               </p>
               <Image
-                src="/images/logo-secondary.jpeg"
+                src="/images/logo-blue.jpeg"
                 alt="Bhoomi Infrastructure - Secondary Logo"
                 width={56}
                 height={56}
