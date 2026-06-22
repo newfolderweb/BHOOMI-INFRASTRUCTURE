@@ -59,7 +59,7 @@ export default function BeforeFooter() {
           className="lg:col-span-3 relative min-h-[350px] md:min-h-[420px]"
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.2!2d80.99!3d26.87!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be37eb1f1b0a5%3A0x0!2sIndira+Nagar+Lucknow!5e0!3m2!1sen!2sin!4v1718000000000"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.2!2d80.99!3d26.87!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be37eb1f1b0a5%3A0x0!2sNandini+Vihar+Sector+12+Indira+Nagar+Lucknow+226016!5e0!3m2!1sen!2sin!4v1718000000000"
             width="100%"
             height="100%"
             style={{ border: 0, position: "absolute", inset: 0 }}

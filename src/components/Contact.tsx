@@ -11,13 +11,13 @@ const contactGrid = [
     {
       icon: <Phone size={20} strokeWidth={1.5} />,
       label: "Phone",
-      value: "0522-3524986",
-      href: "tel:05223524986",
+      value: "8604042326",
+      href: "tel:+918604042326",
     },
     {
       icon: <MessageCircle size={20} strokeWidth={1.5} />,
       label: "WhatsApp",
-      value: "+91 73900 90241",
+      value: "+91 73900 90241, 8604042326",
       href: "https://wa.me/917390090241",
     },
   ],

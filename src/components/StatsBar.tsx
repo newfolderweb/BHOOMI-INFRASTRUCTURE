@@ -13,10 +13,9 @@ interface StatItem {
 }
 
 const stats: StatItem[] = [
-  { prefix: "₹", value: 7.5, suffix: " Cr+", label: "Revenue Generated", sublabel: "this year", decimals: 1 },
-  { value: 10, suffix: "+", label: "Projects Delivered" },
-  { value: 18, suffix: "+", label: "Trusted Clients" },
-  { value: 4, suffix: "+", label: "Years of Excellence" },
+  { value: 90, suffix: "+", label: "Projects Delivered" },
+  { value: 90, suffix: "+", label: "Trusted Clients" },
+  { value: 7, suffix: "", label: "Years of Excellence" },
 ];
 
 function CountUp({
@@ -71,7 +70,7 @@ export default function StatsBar() {
 
   return (
     <section ref={ref} className="bg-navy py-14 md:py-18 px-6 md:px-13">
-      <div className="max-w-[1100px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0">
+      <div className="max-w-[1100px] mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-0">
         {stats.map((stat, i) => (
           <motion.div
             key={stat.label}

@@ -213,15 +213,15 @@ export default function Footer() {
               <ul className="space-y-5 list-none">
                 {/* Phone */}
                 <li className="group flex items-start gap-4">
-                  <div className="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.06] group-hover:border-gold/20 flex items-center justify-center shrink-0 transition-colors duration-300">
-                    <Phone size={14} className="text-gold/60 group-hover:text-gold transition-colors duration-300" />
+                  <div className="w-11 h-11 rounded-lg bg-white/[0.04] border border-white/[0.06] group-hover:border-gold/20 flex items-center justify-center shrink-0 transition-colors duration-300">
+                    <Phone size={18} className="text-gold/60 group-hover:text-gold transition-colors duration-300" />
                   </div>
                   <div className="pt-0.5">
                     <a
-                      href="tel:05223524986"
+                      href="tel:+918604042326"
                       className="text-[13px] text-white/50 hover:text-white no-underline transition-colors block leading-[1.7]"
                     >
-                      0522-3524986
+                      8604042326
                     </a>
                     <a
                       href="tel:+917390090241"
@@ -233,8 +233,8 @@ export default function Footer() {
                 </li>
                 {/* Email */}
                 <li className="group flex items-start gap-4">
-                  <div className="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.06] group-hover:border-gold/20 flex items-center justify-center shrink-0 transition-colors duration-300">
-                    <Mail size={14} className="text-gold/60 group-hover:text-gold transition-colors duration-300" />
+                  <div className="w-11 h-11 rounded-lg bg-white/[0.04] border border-white/[0.06] group-hover:border-gold/20 flex items-center justify-center shrink-0 transition-colors duration-300">
+                    <Mail size={18} className="text-gold/60 group-hover:text-gold transition-colors duration-300" />
                   </div>
                   <a
                     href="mailto:bhoomiinfrastructures@gmail.com"

@@ -35,11 +35,11 @@ const teamMembers: TeamMember[] = [
     initials: "SK",
   },
   {
-    name: "Sanjay Kumar Singh",
-    title: "Civil Head",
-    credential: "Civil Engineer",
-    image: "/images/team/sanjay.png",
-    initials: "SK",
+    name: "Satya Singh",
+    title: "Office Manager",
+    credential: "B.Com",
+    image: "/images/team/satya.jpg",
+    initials: "SS",
   },
   {
     name: "Ar. Deepak Kumar Singh",
@@ -106,7 +106,7 @@ export default function AboutTeam() {
             endeavour stands as smart, safe, and exemplary in quality.
           </p>
           <p className="text-[14px] md:text-[15px] text-mid-grey leading-[1.85] max-w-[620px] mx-auto">
-            With 10+ completed projects, 18+ trusted clients, and a portfolio
+            With 90+ completed projects, 90+ trusted clients, and a portfolio
             spanning data centres to defence establishments — we don&apos;t just
             build structures, we build trust.
           </p>
