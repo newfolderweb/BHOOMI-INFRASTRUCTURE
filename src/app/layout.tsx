@@ -38,6 +38,11 @@ export const metadata: Metadata = {
     "housekeeping services",
     "data centre construction",
   ],
+  icons: {
+    icon: "/images/favicon-circle.png",
+    shortcut: "/images/favicon-circle.png",
+    apple: "/images/favicon-circle.png",
+  },
   authors: [{ name: "Bhoomi Infrastructure Pvt. Ltd." }],
   robots: {
     index: true,
@@ -81,9 +86,6 @@ export default function RootLayout({
       className={`${playfair.variable} ${inter.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <head>
-        <link rel="icon" href="/images/logo.png" type="image/png" sizes="any" />
-      </head>
       <body className="min-h-full flex flex-col font-body" suppressHydrationWarning>{children}</body>
     </html>
   );
